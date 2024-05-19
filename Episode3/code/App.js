@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import logo from "./Episode3/logo1.png";
+import user from "./Episode3/user.png";
+import "./Assignment.css";
 
 //nested header element structure with core react
 const heading1 = React.createElement("h1", {id : "h1"}, "thisis an h1 tag");
@@ -31,6 +34,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
         <Title/>
         <Title></Title>
         {Title()}
+      {/* way of rendering componenet */}
         <h1 style={{color: "red"}} id = "heading1">this is an h1 tag</h1>
         <h1  style={{color: "green"}} id = "heading2">this is an h2 tag</h1>
         <h1  style={{color: "blue"}}  id = "heading3">this is an h3 tag</h1>
@@ -39,4 +43,22 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  }
 
 
-root.render(<Header3/>);
+
+ const Header4 = () =>{
+ return (
+  <header>
+    <div className="left">
+      <img src = {logo} alt ="logo"/>
+    </div>
+    <div className="center">
+      <input className="input " type="text" placeholder="Search" />
+      <button className="submit">Submit</button>
+    </div>
+    <div className="right">
+      <img src={user} alt="user" />
+    </div>
+  </header>
+ )
+ }
+
+root.render(<Header4/>);
