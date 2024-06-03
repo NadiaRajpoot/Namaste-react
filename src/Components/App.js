@@ -4,10 +4,6 @@ import Header from "./Header";
 import Body from "./Body";
 import "./App.css";
 
-
-
-
-
 const AppLayout = () => {
   return (
     <div className="app">
