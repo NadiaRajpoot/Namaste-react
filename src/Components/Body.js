@@ -1,48 +1,40 @@
-import restaurant from "../../Utils/mockData";
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../../Utils/useOnlineStatus";
+import useRestaurantData from "../../Utils/useRestaurantData";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurant] = useState([]);
-  const [filteredRestaurant, setfilteredRestaurants] = useState([]);
   const [searchText, setsearchText] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // used custom hook useResataurantData to fetch live Data from API.
+  const [listOfRestaurants, filteredRestaurant, setfilteredRestaurants] =
+    useRestaurantData();
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  //used custom hook displaying Internet connection relted issues for better user experience.
+  const isOnline = useOnlineStatus();
+  if (isOnline === false)
+    return (
+      <h1>
+        Oops! Seems like you Don't have internet. check Your internet
+        Connection!!
+      </h1>
     );
 
-    const json = await data.json();
-    console.log(json);
-    setListOfRestaurant(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-
-    setfilteredRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-    console.log(listOfRestaurants);
-  };
-
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="filter">
         {/* Top Rated Restaurant Button Faeture */}
         <button
           className="filter-button"
           onClick={() => {
-            const filteredList = restaurant.filter(
-              (res) => res.info.avgRating > 4
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.1
             );
+
             setfilteredRestaurants(filteredList);
           }}
         >
@@ -77,7 +69,11 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRestaurant.map((res) => {
-          return <RestaurantCard key={res.info.id} resData={res.info} />;
+          return (
+            <Link key={res.info.id} to={"restaurants/" + res.info.id}>
+              <RestaurantCard resData={res.info}></RestaurantCard>
+            </Link>
+          );
         })}
       </div>
     </>
