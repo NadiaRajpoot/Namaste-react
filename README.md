@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Namaste React Course By Akshay Saini🚀.
 
 ### Episode_05 Let's get Hooked
@@ -88,3 +89,6 @@ const Example = (props) => {
   return <div />;
 }
 ```
+=======
+- [🚀 Wokeats Live Project App Link 😍](https://wokeats.netlify.app/)
+>>>>>>> 07d9bbbcc9c555b7e1f47fdaa1f815b4d74af8a3
