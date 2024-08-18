@@ -5,7 +5,7 @@ const About = () => {
     <div className="md:flex gap-2 md:gap-10 justify-center p-10">
       {/* Main container for the About section */}
 
-      <div className="md:w-6/12 flex flex-col gap-2">
+      <div className="md:w-6/12 flex flex-col md:gap-2 gap-4">
         {/* Left section with text content */}
 
         <h1 className="font-extrabold word-tight text-3xl">Wok Eats</h1>
@@ -16,7 +16,7 @@ const About = () => {
         </h4>
         {/* Subheading */}
 
-        <p className="w-full text-[#676a6d]">
+        <p className="w-full text-[#676a6d] ">
           Exploring the culinary treasures from renowned food brands near you is
           like embarking on a delightful gastronomic adventure. Discover the top
           brands offering a wide array of delicious options that cater to

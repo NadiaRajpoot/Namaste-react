@@ -34,7 +34,7 @@ const Body = () => {
   }, []);
 
   // Calculate translateX value for horizontal scrolling based on screen size
-  const translateValue = isMediumScreen ? slide * 50 : slide * 80;
+  const translateValue = isMediumScreen ? slide * 55 : slide * 80;
 
   // Use custom hook to fetch restaurant data
   const [listOfRestaurants, filteredRestaurant, setfilteredRestaurants] =
@@ -121,17 +121,17 @@ const Body = () => {
               <FaArrowRight />
             </div>
           </div>
-        </div>
-        <div
+        </div >
+        <div className="relative w-full overflow-hidden"><div
           style={{ transform: `translateX(${translateValue}%)` }}
-          className="flex transition-transform duration-500"
+          className="flex  transition-transform duration-500"
         >
           {listOfRestaurants.map((res) => (
             <Link key={res.info.id} to={"restaurants/" + res.info.id}>
               <HorizontalCards resData={res.info} />
             </Link>
           ))}
-        </div>
+        </div></div>
       </div>
       <div className="h-[2px] w-11/12 bg-gray-200 m-auto mb-10"></div>
       <div>

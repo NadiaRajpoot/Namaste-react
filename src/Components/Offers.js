@@ -24,18 +24,15 @@ const Offers = () => {
     return false; // Otherwise, exclude this restaurant
   });
 
-  // Updating the filtered restaurants state with the Offerlist whenever it changes
-  useEffect(() => {
-    setfilteredRestaurants(Offerlist);
-  }, [Offerlist]); // Added Offerlist as a dependency to ensure it updates when the list changes
+
 
   return (
     <div className="w-full">
-      <div className="flex justify-between bg-gradient-to-t from-60% from-[#d3c8f6] rounded-b-3xl">
+      <div className="md:flex justify-between bg-gradient-to-t from-60% from-[#d3c8f6] rounded-b-3xl">
         {/* Section with a heading and a line decoration */}
-        <div className="h-36 mt-[70px] ml-28 justify-end">
+        <div className="h-36 mt-[70px] md:ml-28 mx-10 justify-end">
           <h1
-            className="text-5xl font-extrabold text-[rgba(2, 6, 12, 0.75)] 
+            className="md:text-5xl text-4xl font-extrabold text-[rgba(2, 6, 12, 0.75)] 
           tracking-tight"
           >
             Restaurants Near Me
@@ -60,7 +57,7 @@ const Offers = () => {
         {/* Image section next to the heading */}
         <div>
           <img
-            className="mr-56 h-80 object-cover"
+            className="mr-56 md:h-80  object-cover"
             src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1002,h_600/v1678428358/portal/m/seo_web/dweb_header.png"
             alt=""
           />
@@ -68,8 +65,8 @@ const Offers = () => {
       </div>
       
       {/* Introduction section to the offers */}
-      <div className="ml-10 mt-12">
-        <h1 className="ml-6 my-6 font-extrabold text-3xl">
+      <div className="md:ml-10 md:mt-12 mx-6">
+        <h1 className="md:ml-6 mx-4 my-6 m-auto font-extrabold text-2xl md:text-3xl">
           Restaurants With Great Offers Near Me
         </h1>
         <div className="rounded-lg w-11/12 border border-gray-300 px-4 py-8 mb-8">

@@ -12,7 +12,7 @@ const Help = () => {
       {/* Header Section */}
       <div className="py-10 px-4 mx-8">
         <h1 className="font-extrabold text-2xl">Help & Support</h1>
-        <p>Let's take a step ahead and help you better.</p>
+        <p className="py-1">Let's take a step ahead and help you better.</p>
       </div>
 
       {/* Main Content Section */}
