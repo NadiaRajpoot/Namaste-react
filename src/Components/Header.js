@@ -1,4 +1,4 @@
-import logo from "../../foodlogo.png";
+import logo from "../../assets/foodlogo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsCartPlusFill } from "react-icons/bs";
