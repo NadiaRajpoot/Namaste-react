@@ -69,7 +69,7 @@ const Offers = () => {
         <h1 className="md:ml-6 mx-4 my-6 m-auto font-extrabold text-2xl md:text-3xl">
           Restaurants With Great Offers Near Me
         </h1>
-        <div className="rounded-lg w-11/12 border border-gray-300 px-4 py-8 mb-8">
+        <div className="rounded-lg w-11/12 border border-gray-300 px-4 py-8 ml-4 mb-8">
           <h1 className="text-xl my-4 font-extrabold text-[#676a6d]">
             Get the best offers on the food from top restaurants near you
           </h1>

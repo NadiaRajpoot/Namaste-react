@@ -34,7 +34,7 @@ const Body = () => {
   }, []);
 
   // Calculate translateX value for horizontal scrolling based on screen size
-  const translateValue = isMediumScreen ? slide * 55 : slide * 80;
+  const translateValue = isMediumScreen ? slide * 55 : slide * 70;
 
   // Use custom hook to fetch restaurant data
   const [listOfRestaurants, filteredRestaurant, setfilteredRestaurants] =
