@@ -1,11 +1,32 @@
-* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Noto Sans", sans-serif;
+  }
+}
+.blackOverlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-overlay {
+  background-image: linear-gradient(
+    to bottom, 
+    rgb(255, 255, 255, 0) 40%,
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-}
+} */
 /*-----------Header-section--------*/
-
+/* 
 .header {
   display: flex;
   justify-content: space-between;
@@ -42,11 +63,11 @@
 .nav-links ul li:hover {
   color: red;
   cursor: pointer;
-}
+} */
 
 /*------------------Restaurants----------------*/
 
-.res-container {
+/* .res-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
@@ -185,4 +206,4 @@
   height: 20px;
   width: 50px;
   background-color: beige;
-}
+} */
