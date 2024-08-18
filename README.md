@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-## Namaste React Course By Akshay Saini🚀.
+### Namaste React Course By Akshay Saini🚀.
 
 ### Wokeats - Food Ordering Website 
 
