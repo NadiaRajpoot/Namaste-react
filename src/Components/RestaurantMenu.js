@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
   const resId = useParams();
 
   const menuInfo = useRestaurantMenu(resId);
-
+  
   if (menuInfo === null) return <Shimmer />;
 
   const {
@@ -22,15 +22,17 @@ const RestaurantMenu = () => {
   } = menuInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    menuInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    menuInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
    
   const catagories =
-    menuInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    menuInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
+
+  
 
   return (menuInfo.length=== 0) ? <Shimmer/>: (
     <>
