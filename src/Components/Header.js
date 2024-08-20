@@ -82,16 +82,25 @@ const Header = () => {
 
           {/* mobile menu */}
           <div className="flex items-center md:hidden gap-4 text-red-600 mr-5 ">
-            <div></div>
-            <button
+          
+            <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="cursor-pointer"
+              className="cursor-pointer relative"
             >
               {isMenuOpen ? (
                 <FaXmark className="w-5 h-5 " />
               ) : (
-                <FaBars className="w-5 h-5 " />
-              )}
+                <div className="relative">
+                  <FaBars className="w-5 h-5 " />
+                  <div className="absolute bottom-4 left-3 flex items-center justify-center
+               w-4 h-4 bg-red-600 text-white text-xs rounded-full "> {cartItems.length}</div>
+                  </div>
+                  
+                
+                 
+              ) }
+             
+              
             </button>
           </div>
         </div>
