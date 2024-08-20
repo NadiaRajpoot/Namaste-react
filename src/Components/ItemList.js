@@ -20,6 +20,7 @@ const ItemList = ({
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
+   console.log(items)
 
   // Function to handle deleting an item from the cart
   const handleDeleteItem = () => {
@@ -65,7 +66,7 @@ const ItemList = ({
             {/* Item description */}
             <div className="flex">
               <p className="text-sm flex-col w-full md:w-11/12 my-2 flex">
-                {item?.card?.info?.description.slice(0, 100)}
+                {item?.card?.info?.description? item?.card?.info?.description.slice(0, 100) + "..." :""}
               </p>
             </div>
 
@@ -103,7 +104,7 @@ const ItemList = ({
           <div className="relative flex items-center justify-center">
             <img
               src={CDN_URL + item.card.info.imageId}
-              alt=""
+              alt="image"
               className="relative w-40 h-36 object-cover rounded-2xl mb-8 xl:mb-8 md:m-0"
             />
             {showButton && (
