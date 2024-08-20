@@ -103,7 +103,7 @@ const ItemList = ({
           {/* Item image and ADD button */}
           <div className="relative flex items-center justify-center">
             <img
-              src={CDN_URL + item.card.info.imageId}
+              src= {`${item.card.info.imageId ? CDN_URL + item.card.info.imageId : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/be2600bef67fba98cb9bad18c40f9080" } `}
               alt="image"
               className="relative w-40 h-36 object-cover rounded-2xl mb-8 xl:mb-8 md:m-0"
             />
