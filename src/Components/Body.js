@@ -64,7 +64,7 @@ const Body = () => {
     if (slide === 0) return; // Do nothing if at the start of slides
     setSlide(slide + 1);
   };
-
+  console.log(listOfRestaurants)
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (

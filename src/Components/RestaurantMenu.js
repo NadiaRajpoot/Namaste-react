@@ -70,7 +70,7 @@ const RestaurantMenu = () => {
             <MdDeliveryDining className="h-5 w-5" />
             <div className="flex gap-1 items-center">
               <span className="text-sm ">{sla.lastMileTravelString}s</span>
-              <span className="text-sm ">{feeDetails.message.slice(15)}</span>
+              <span className="text-sm ">{feeDetails.message}</span>
             </div>
           </div>
         </div>

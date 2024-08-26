@@ -20,15 +20,19 @@ const useRestaurantData = () => {
       // Fetch data from API
       const response = await fetch(API_URL);
       const json = await response.json();
+      console.log(json)
 
       // Extract and set restaurant data
       const restaurants =
-        json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
       setListOfRestaurant(restaurants);
       setfilteredRestaurants(restaurants);
 
       // Extract and set menu list data
-      const menu = json.data.cards[0].card.card.imageGridCards.info;
+      const menu = json.data.cards[0].card.card.
+      gridElements?.infoWithStyle.info
+      
+      ;
       setMenuList(menu);
     } catch (error) {
       console.error("Failed to fetch data:", error);
