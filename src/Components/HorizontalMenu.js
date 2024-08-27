@@ -9,6 +9,7 @@ const HorizontalMenu = () => {
   const [collectionId, setCollectionId] = useState([]); // State to store collection IDs
   const [, , , menuList] = useRestaurantData(); // Custom hook to fetch restaurant data
 
+  
   useEffect(() => {
     // Extract collection IDs from the menuList and store them in state
     const ids = menuList.map((item) => {
