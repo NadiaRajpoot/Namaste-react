@@ -9,9 +9,9 @@ const useRestaurantMenu = (resId) => {
   
 
   useEffect(() => {
-    setTimeout(()=>{
+
       fetchData();
-    },10000)
+    
   }, [resId]);
   // Function to fetch data from the API
   const fetchData = async () => {
