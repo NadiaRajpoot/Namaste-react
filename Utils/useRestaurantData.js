@@ -11,7 +11,9 @@ const useRestaurantData = () => {
 
   // useEffect hook to fetch data when the component mounts
   useEffect(() => {
-    fetchData();
+    setTimeout(()=>{
+      fetchData();
+    },10000)
   }, []);
 
   // Function to fetch data from the API

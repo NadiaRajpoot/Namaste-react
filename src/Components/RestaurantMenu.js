@@ -1,16 +1,17 @@
 
-import Shimmer from "./Shimmer";
+
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../Utils/useRestaurantMenu";
 import RestaurantCatagory from "./RestaurantCatagory";
 import { MdStars } from "react-icons/md";
 import { MdDeliveryDining } from "react-icons/md";
+import ShimmerMenu from "./ShimmerMenu";
 const RestaurantMenu = () => {
   const resId = useParams();
 
   const menuInfo = useRestaurantMenu(resId);
-  console.log(menuInfo)
-  if (menuInfo === null) return <Shimmer />;
+ 
+  if (menuInfo === null) return <ShimmerMenu />;
 
   const {
     name,
@@ -35,7 +36,7 @@ const RestaurantMenu = () => {
 
   
 
-  return (menuInfo.length=== 0) ? <Shimmer/>: (
+  return (menuInfo.length=== 0) ? <ShimmerMenu/>: (
     <>
       <div className=" lg:w-8/12 md:w-8/12 w-10/12  m-auto mt-14">
         <h1 className="font-extrabold mb-2 mt-6  md:text-2xl text-lg">

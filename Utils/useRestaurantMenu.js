@@ -6,10 +6,13 @@ const useRestaurantMenu = (resId) => {
   const [menuInfo, setMenuInfo] = useState(null);
 
   // useEffect hook to fetch data when the component mounts or when resId changes
-  useEffect(() => {
-    fetchData();
-  }, [resId]); // Added resId as a dependency to refetch data when resId changes
+  
 
+  useEffect(() => {
+    setTimeout(()=>{
+      fetchData();
+    },10000)
+  }, [resId]);
   // Function to fetch data from the API
   const fetchData = async () => {
     try {
